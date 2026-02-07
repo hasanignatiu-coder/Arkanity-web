@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика за поверителност | Arkanity</title>
+    <meta name="description"
+        content="Политика за поверителност и защита на личните данни на Arkanity. Научете как защитаваме вашата информация в съответствие с GDPR.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #f9fafb;
+            color: #1a1a1a;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .legal-header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .legal-toc {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .legal-toc h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .legal-toc ol {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        .legal-toc li {
+            margin-bottom: 8px;
+        }
+
+        .legal-toc a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        .legal-toc a:hover {
+            text-decoration: underline;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .legal-section h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            padding-top: 20px;
+        }
+
+        .legal-section h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px 0;
+        }
+
+        .legal-section p {
+            margin-bottom: 15px;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+
+        .legal-section li {
+            margin-bottom: 8px;
+        }
+
+        .section-number {
+            color: #00d9ff;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #e0f7ff;
+            border-left: 4px solid #00d9ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h4 {
+            color: #00d9ff;
+            margin-top: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00d9ff;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 217, 255, 0.4);
+        }
+
+        .lang-toggle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lang-toggle button {
+            background: #00d9ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .lang-toggle button:hover {
+            background: #00b8db;
+        }
+
+        .content-bg {
+            display: none;
+        }
+
+        .content-bg.active {
+            display: block;
+        }
+
+        .content-en {
+            display: none;
+        }
+
+        .content-en.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="legal-container">
+        <div class="legal-header">
+            <a href="index.html"
+                style="color: #00d9ff; text-decoration: none; display: inline-block; margin-bottom: 20px;">
+                <i class="fas fa-arrow-left"></i> Back to Arkanity
+            </a>
+            <h1>ПОЛИТИКА ЗА ПОВЕРИТЕЛНОСТ<br>PRIVACY POLICY</h1>
+            <p class="last-updated">Last Updated: February 1, 2026 | Последна актуализация: 1 февруари 2026</p>
+        </div>
+
+        <div class="lang-toggle">
+            <button onclick="toggleLanguage()" id="lang-btn">🇬🇧 Switch to English</button>
+        </div>
+
+        <!-- BULGARIAN CONTENT -->
+        <div class="content-bg active">
+            <div class="legal-toc">
+                <h2>Съдържание</h2>
+                <ol>
+                    <li><a href="#bg-1">Въведение</a></li>
+                    <li><a href="#bg-2">Данните, които събираме</a></li>
+                    <li><a href="#bg-3">Как използваме вашите данни</a></li>
+                    <li><a href="#bg-4">Правна основа (GDPR)</a></li>
+                    <li><a href="#bg-5">Споделяне на данни</a></li>
+                    <li><a href="#bg-6">Защита на данните</a></li>
+                    <li><a href="#bg-7">Бисквитки</a></li>
+                    <li><a href="#bg-8">Вашите права (GDPR)</a></li>
+                    <li><a href="#bg-9">Как да упражните правата си</a></li>
+                    <li><a href="#bg-10">Съхранение на данни</a></li>
+                    <li><a href="#bg-11">Контакти</a></li>
+                </ol>
+            </div>
+
+            <div class="legal-section" id="bg-1">
+                <h3><span class="section-number">1.</span> ВЪВЕДЕНИЕ</h3>
+                <p>Arkanity ("ние", "нас", "нашите") зачита вашата поверителност и се ангажира да защитава вашите лични
+                    данни.</p>
+                <p>Тази политика описва как събираме, използваме, съхраняваме и защитаваме вашите данни в съответствие
+                    с:</p>
+                <ul>
+                    <li>Общия регламент за защита на данните (GDPR - EU 2016/679)</li>
+                    <li>Закона за защита на личните данни на Република България</li>
+                    <li>Други приложими закони</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-2">
+                <h3><span class="section-number">2.</span> ДАННИТЕ, КОИТО СЪБИРАМЕ</h3>
+                <h4>2.1 Информация, която ни предоставяте:</h4>
+                <ul>
+                    <li><strong>Контактна информация:</strong> Име, бизнес име, имейл адрес, телефонен номер</li>
+                    <li><strong>Бизнес информация:</strong> Индустрия, текущ Google рейтинг, адрес на бизнеса</li>
+                    <li><strong>Комуникация:</strong> Съобщения, които ни изпращате чрез форми или имейл</li>
+                    <li><strong>Платежна информация:</strong> Детайли за плащане (обработени чрез трета страна)</li>
+                </ul>
+                <h4>2.2 Информация, която събираме автоматично:</h4>
+                <ul>
+                    <li><strong>Технически данни:</strong> IP адрес, тип на браузъра, операционна система, устройство
+                    </li>
+                    <li><strong>Данни за използването:</strong> Страници, които посещавате, кликвания, време прекарано
+                        на сайта</li>
+                    <li><strong>Бисквитки:</strong> Бисквитки и подобни технологии (вижте секция 7)</li>
+                    <li><strong>Местоположение:</strong> Приблизително местоположение базирано на IP адрес</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-3">
+                <h3><span class="section-number">3.</span> КАК ИЗПОЛЗВАМЕ ВАШИТЕ ДАННИ</h3>
+                <h4>3.1 Предоставяне на услуги:</h4>
+                <ul>
+                    <li>Управление на вашия Google Business Profile</li>
+                    <li>Изпращане на автоматизирани заявки за отзиви</li>
+                    <li>Отговаряне на отзиви</li>
+                    <li>Създаване на месечни отчети</li>
+                </ul>
+                <h4>3.2 Комуникация:</h4>
+                <ul>
+                    <li>Изпращане на потвърждения и актуализации за услугата</li>
+                    <li>Отговор на вашите запитвания</li>
+                    <li>Изпращане на маркетингови съобщения (само със съгласие)</li>
+                </ul>
+                <h4>3.3 Подобряване на услугите:</h4>
+                <ul>
+                    <li>Анализ на използването за подобряване на функционалността</li>
+                    <li>Откриване и предотвратяване на измами</li>
+                    <li>Решаване на технически проблеми</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-4">
+                <h3><span class="section-number">4.</span> ПРАВНА ОСНОВА ЗА ОБРАБОТКА (GDPR)</h3>
+                <p>Обработваме вашите данни на следните основания:</p>
+                <ul>
+                    <li><strong>Изпълнение на договор:</strong> За предоставяне на услугите, които сте поръчали</li>
+                    <li><strong>Законен интерес:</strong> Подобряване на нашите услуги, предотвратяване на измами</li>
+                    <li><strong>Съгласие:</strong> Маркетингови съобщения, незадължителни бисквитки</li>
+                    <li><strong>Законови задължения:</strong> Когато законът изисква обработка на данни</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-5">
+                <h3><span class="section-number">5.</span> СПОДЕЛЯНЕ НА ДАННИ</h3>
+                <h4>5.1 С кого споделяме вашите данни:</h4>
+                <ul>
+                    <li><strong>Google:</strong> За управление на вашия Google Business Profile</li>
+                    <li><strong>Хостинг:</strong> Oracle Cloud (сървъри)</li>
+                    <li><strong>Имейл услуги:</strong> За изпращане на съобщения</li>
+                    <li><strong>Плащания:</strong> Обработване на плащания (Stripe, PayPal и др.)</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>🔒 Важно</h4>
+                    <p><strong>Никога няма да продаваме или отдаваме под наем вашите лични данни на трети страни за
+                            маркетингови цели.</strong></p>
+                </div>
+            </div>
+
+            <div class="legal-section" id="bg-6">
+                <h3><span class="section-number">6.</span> ЗАЩИТА НА ДАННИТЕ</h3>
+                <h4>6.1 Мерки за сигурност:</h4>
+                <p><strong>Технически:</strong></p>
+                <ul>
+                    <li>HTTPS криптиране на всички връзки</li>
+                    <li>Защитени сървъри с Firewall</li>
+                    <li>Редовни резервни копия</li>
+                    <li>Криптиране на чувствителни данни</li>
+                </ul>
+                <p><strong>Организационни:</strong></p>
+                <ul>
+                    <li>Ограничен достъп до лични данни</li>
+                    <li>Обучение на персонала</li>
+                    <li>Политики за сигурност</li>
+                </ul>
+                <h4>6.2 Инциденти:</h4>
+                <p>При нарушение на сигурността:</p>
+                <ul>
+                    <li>Ще ви уведомим в рамките на 72 часа</li>
+                    <li>Ще уведомим съответните органи</li>
+                    <li>Ще предприемем корективни действия</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-7">
+                <h3><span class="section-number">7.</span> БИСКВИТКИ</h3>
+                <h4 id="cookies">7.1 Какво са бисквитките:</h4>
+                <p>Малки текстови файлове, съхранявани във вашия браузър.</p>
+                <h4>7.2 Видове бисквитки, които използваме:</h4>
+                <p><strong>Задължителни бисквитки:</strong></p>
+                <ul>
+                    <li>Сесийни бисквитки (необходими за функционирането на сайта)</li>
+                    <li>Не изискват съгласие</li>
+                </ul>
+                <p><strong>Анализ и производителност:</strong></p>
+                <ul>
+                    <li>Google Analytics (проследява използването)</li>
+                    <li>Изискват съгласие</li>
+                </ul>
+                <h4>7.3 Управление на бисквитките:</h4>
+                <p>Можете да контролирате бисквитките чрез:</p>
+                <ul>
+                    <li>Нашия банер за бисквитки</li>
+                    <li>Настройките на вашия браузър</li>
+                </ul>
+                <p><strong>Важно:</strong> Деактивирането на бисквитките може да ограничи функционалността на сайта.</p>
+            </div>
+
+            <div class="legal-section" id="bg-8">
+                <h3><span class="section-number">8.</span> ВАШИТЕ ПРАВА (GDPR)</h3>
+                <div class="highlight-box">
+                    <h4>⚖️ Вашите права като субект на данни</h4>
+                    <p>Като субект на данни в ЕС, имате следните права:</p>
+                </div>
+                <ul>
+                    <li><strong>Право на достъп:</strong> Можете да поискате копие от всички данни, които имаме за вас
+                    </li>
+                    <li><strong>Право на корекция:</strong> Можете да коригирате неточни или непълни данни</li>
+                    <li><strong>Право на изтриване ("Право да бъдеш забравен"):</strong> Можете да поискате изтриване на
+                        вашите данни</li>
+                    <li><strong>Право на ограничаване:</strong> Можете да поискате ограничаване на обработката</li>
+                    <li><strong>Право на преносимост:</strong> Можете да получите вашите данни в структуриран формат
+                    </li>
+                    <li><strong>Право на възражение:</strong> Можете да възразите срещу обработката за директен
+                        маркетинг</li>
+                    <li><strong>Право да оттеглите съгласието:</strong> Можете да оттеглите съгласието по всяко време
+                    </li>
+                    <li><strong>Право на жалба:</strong> Можете да подадете жалба до Комисия за защита на личните данни
+                        (КЗЛД)</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-9">
+                <h3><span class="section-number">9.</span> КАК ДА УПРАЖНИТЕ ПРАВАТА СИ</h3>
+                <div class="highlight-box">
+                    <h4>📧 За упражняване на правата си</h4>
+                    <p><strong>Имейл:</strong> arkanity.agency@gmail.com<br>
+                        <strong>Тема:</strong> "Заявка за данни - [вашето име]"
+                    </p>
+                    <p><strong>Срок за отговор:</strong> 30 дни (може да се удължи до 60 дни при сложни заявки)</p>
+                    <p><strong>Без такса:</strong> Упражняването на вашите права е безплатно</p>
+                </div>
+            </div>
+
+            <div class="legal-section" id="bg-10">
+                <h3><span class="section-number">10.</span> СЪХРАНЕНИЕ НА ДАННИ</h3>
+                <h4>10.1 Колко дълго пазим данните:</h4>
+                <ul>
+                    <li><strong>Активни клиенти:</strong> Докато сте активен клиент</li>
+                    <li><strong>След прекратяване:</strong> 30 дни за възможно възстановяване, след това данните се
+                        изтриват</li>
+                    <li><strong>Финансови записи:</strong> 5 години (законово изискване за счетоводство в България)</li>
+                    <li><strong>Маркетингови данни:</strong> Докато не оттеглите съгласието си</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="bg-11">
+                <h3><span class="section-number">11.</span> КОНТАКТИ</h3>
+                <div class="highlight-box">
+                    <h4>📞 Свържете се с нас</h4>
+                    <p><strong>Администратор на данни:</strong> Arkanity<br>
+                        <strong>Имейл:</strong> arkanity.agency@gmail.com<br>
+                        <strong>Уебсайт:</strong> arkanity.agency
+                    </p>
+                    <p><strong>За жалби:</strong><br>
+                        Комисия за защита на личните данни (КЗЛД)<br>
+                        Уебсайт: <a href="https://www.cpdp.bg" target="_blank"
+                            style="color: #00d9ff;">https://www.cpdp.bg</a><br>
+                        Адрес: София 1592, бул. "Проф. Цветан Лазаров" № 2</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGLISH CONTENT -->
+        <div class="content-en">
+            <div class="legal-toc">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#en-1">Introduction</a></li>
+                    <li><a href="#en-2">Data We Collect</a></li>
+                    <li><a href="#en-3">How We Use Your Data</a></li>
+                    <li><a href="#en-4">Legal Basis (GDPR)</a></li>
+                    <li><a href="#en-5">Data Sharing</a></li>
+                    <li><a href="#en-6">Data Protection</a></li>
+                    <li><a href="#en-7">Cookies</a></li>
+                    <li><a href="#en-8">Your Rights (GDPR)</a></li>
+                    <li><a href="#en-9">How to Exercise Your Rights</a></li>
+                    <li><a href="#en-10">Data Retention</a></li>
+                    <li><a href="#en-11">Contact</a></li>
+                </ol>
+            </div>
+
+            <div class="legal-section" id="en-1">
+                <h3><span class="section-number">1.</span> INTRODUCTION</h3>
+                <p>Arkanity ("we," "us," "our") respects your privacy and is committed to protecting your personal data.
+                </p>
+                <p>This policy describes how we collect, use, store, and protect your data in accordance with:</p>
+                <ul>
+                    <li>General Data Protection Regulation (GDPR - EU 2016/679)</li>
+                    <li>Personal Data Protection Act of the Republic of Bulgaria</li>
+                    <li>Other applicable laws</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-2">
+                <h3><span class="section-number">2.</span> DATA WE COLLECT</h3>
+                <h4>2.1 Information You Provide:</h4>
+                <ul>
+                    <li><strong>Contact Information:</strong> Name, business name, email address, phone number</li>
+                    <li><strong>Business Information:</strong> Industry, current Google rating, business address</li>
+                    <li><strong>Communications:</strong> Messages you send us through forms or email</li>
+                    <li><strong>Payment Information:</strong> Payment details (processed by third party)</li>
+                </ul>
+                <h4>2.2 Information We Collect Automatically:</h4>
+                <ul>
+                    <li><strong>Technical Data:</strong> IP address, browser type, operating system, device</li>
+                    <li><strong>Usage Data:</strong> Pages you visit, clicks, time spent on site</li>
+                    <li><strong>Cookies:</strong> Cookies and similar technologies (see Section 7)</li>
+                    <li><strong>Location:</strong> Approximate location based on IP address</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-3">
+                <h3><span class="section-number">3.</span> HOW WE USE YOUR DATA</h3>
+                <h4>3.1 Providing Services:</h4>
+                <ul>
+                    <li>Managing your Google Business Profile</li>
+                    <li>Sending automated review requests</li>
+                    <li>Responding to reviews</li>
+                    <li>Creating monthly reports</li>
+                </ul>
+                <h4>3.2 Communication:</h4>
+                <ul>
+                    <li>Sending service confirmations and updates</li>
+                    <li>Responding to your inquiries</li>
+                    <li>Sending marketing messages (with consent only)</li>
+                </ul>
+                <h4>3.3 Improving Services:</h4>
+                <ul>
+                    <li>Analyzing usage to improve functionality</li>
+                    <li>Detecting and preventing fraud</li>
+                    <li>Resolving technical issues</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-4">
+                <h3><span class="section-number">4.</span> LEGAL BASIS FOR PROCESSING (GDPR)</h3>
+                <p>We process your data on the following grounds:</p>
+                <ul>
+                    <li><strong>Performance of Contract:</strong> To provide the services you ordered</li>
+                    <li><strong>Legitimate Interest:</strong> Improving our services, preventing fraud</li>
+                    <li><strong>Consent:</strong> Marketing communications, optional cookies</li>
+                    <li><strong>Legal Obligations:</strong> When law requires data processing</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-5">
+                <h3><span class="section-number">5.</span> DATA SHARING</h3>
+                <h4>5.1 Who We Share Your Data With:</h4>
+                <ul>
+                    <li><strong>Google:</strong> To manage your Google Business Profile</li>
+                    <li><strong>Hosting:</strong> Oracle Cloud (servers)</li>
+                    <li><strong>Email Services:</strong> For sending messages</li>
+                    <li><strong>Payments:</strong> Payment processing (Stripe, PayPal, etc.)</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>🔒 Important</h4>
+                    <p><strong>We will never sell or rent your personal data to third parties for marketing
+                            purposes.</strong></p>
+                </div>
+            </div>
+
+            <div class="legal-section" id="en-6">
+                <h3><span class="section-number">6.</span> DATA PROTECTION</h3>
+                <h4>6.1 Security Measures:</h4>
+                <p><strong>Technical:</strong></p>
+                <ul>
+                    <li>HTTPS encryption on all connections</li>
+                    <li>Secured servers with Firewall</li>
+                    <li>Regular backups</li>
+                    <li>Encryption of sensitive data</li>
+                </ul>
+                <p><strong>Organizational:</strong></p>
+                <ul>
+                    <li>Limited access to personal data</li>
+                    <li>Staff training</li>
+                    <li>Security policies</li>
+                </ul>
+                <h4>6.2 Incidents:</h4>
+                <p>In case of security breach:</p>
+                <ul>
+                    <li>We will notify you within 72 hours</li>
+                    <li>We will notify relevant authorities</li>
+                    <li>We will take corrective actions</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-7">
+                <h3><span class="section-number">7.</span> COOKIES</h3>
+                <h4 id="cookies-en">7.1 What Are Cookies:</h4>
+                <p>Small text files stored in your browser.</p>
+                <h4>7.2 Types of Cookies We Use:</h4>
+                <p><strong>Essential Cookies:</strong></p>
+                <ul>
+                    <li>Session cookies (necessary for site functionality)</li>
+                    <li>Do not require consent</li>
+                </ul>
+                <p><strong>Analytics and Performance:</strong></p>
+                <ul>
+                    <li>Google Analytics (tracks usage)</li>
+                    <li>Require consent</li>
+                </ul>
+                <h4>7.3 Managing Cookies:</h4>
+                <p>You can control cookies through:</p>
+                <ul>
+                    <li>Our cookie banner</li>
+                    <li>Your browser settings</li>
+                </ul>
+                <p><strong>Important:</strong> Disabling cookies may limit site functionality.</p>
+            </div>
+
+            <div class="legal-section" id="en-8">
+                <h3><span class="section-number">8.</span> YOUR RIGHTS (GDPR)</h3>
+                <div class="highlight-box">
+                    <h4>⚖️ Your Rights as a Data Subject</h4>
+                    <p>As a data subject in the EU, you have the following rights:</p>
+                </div>
+                <ul>
+                    <li><strong>Right to Access:</strong> You can request a copy of all data we have about you</li>
+                    <li><strong>Right to Rectification:</strong> You can correct inaccurate or incomplete data</li>
+                    <li><strong>Right to Erasure ("Right to Be Forgotten"):</strong> You can request deletion of your
+                        data</li>
+                    <li><strong>Right to Restriction:</strong> You can request limitation of processing</li>
+                    <li><strong>Right to Data Portability:</strong> You can receive your data in a structured format
+                    </li>
+                    <li><strong>Right to Object:</strong> You can object to processing for direct marketing</li>
+                    <li><strong>Right to Withdraw Consent:</strong> You can withdraw consent at any time</li>
+                    <li><strong>Right to Complain:</strong> You can file a complaint with the Personal Data Protection
+                        Commission (CPDP)</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-9">
+                <h3><span class="section-number">9.</span> HOW TO EXERCISE YOUR RIGHTS</h3>
+                <div class="highlight-box">
+                    <h4>📧 To Exercise Your Rights</h4>
+                    <p><strong>Email:</strong> arkanity.agency@gmail.com<br>
+                        <strong>Subject:</strong> "Data Request - [your name]"
+                    </p>
+                    <p><strong>Response Time:</strong> 30 days (may extend to 60 days for complex requests)</p>
+                    <p><strong>No Fee:</strong> Exercising your rights is free</p>
+                </div>
+            </div>
+
+            <div class="legal-section" id="en-10">
+                <h3><span class="section-number">10.</span> DATA RETENTION</h3>
+                <h4>10.1 How Long We Keep Data:</h4>
+                <ul>
+                    <li><strong>Active Clients:</strong> While you are an active client</li>
+                    <li><strong>After Termination:</strong> 30 days for possible recovery, then data is deleted</li>
+                    <li><strong>Financial Records:</strong> 5 years (legal requirement for accounting in Bulgaria)</li>
+                    <li><strong>Marketing Data:</strong> Until you withdraw consent</li>
+                </ul>
+            </div>
+
+            <div class="legal-section" id="en-11">
+                <h3><span class="section-number">11.</span> CONTACT</h3>
+                <div class="highlight-box">
+                    <h4>📞 Contact Us</h4>
+                    <p><strong>Data Controller:</strong> Arkanity<br>
+                        <strong>Email:</strong> arkanity.agency@gmail.com<br>
+                        <strong>Website:</strong> arkanity.agency
+                    </p>
+                    <p><strong>For Complaints:</strong><br>
+                        Personal Data Protection Commission (CPDP)<br>
+                        Website: <a href="https://www.cpdp.bg" target="_blank"
+                            style="color: #00d9ff;">https://www.cpdp.bg</a><br>
+                        Address: Sofia 1592, Prof. Tsvetan Lazarov Blvd. № 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Initialize from localStorage or default to 'bg'
+        let currentLang = localStorage.getItem('arkanity-lang') || 'bg';
+
+        function updateView() {
+            if (currentLang === 'bg') {
+                document.querySelector('.content-bg').classList.add('active');
+                document.querySelector('.content-en').classList.remove('active');
+                document.getElementById('lang-btn').innerHTML = '🇬🇧 Switch to English';
+            } else {
+                document.querySelector('.content-bg').classList.remove('active');
+                document.querySelector('.content-en').classList.add('active');
+                document.getElementById('lang-btn').innerHTML = '🇧🇬 Превключи на български';
+            }
+            document.documentElement.lang = currentLang;
+        }
+
+        // Apply on load
+        updateView();
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'bg' ? 'en' : 'bg';
+            localStorage.setItem('arkanity-lang', currentLang);
+            updateView();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

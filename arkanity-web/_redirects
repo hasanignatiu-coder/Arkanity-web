@@ -1,0 +1,7 @@
+# Redirect www to non-www
+https://www.arkanity.agency/*  https://arkanity.agency/:splat  301!
+
+# Ensure canonical URLs
+/index.html  /  301
+/privacy.html  /privacy  301
+/terms.html  /terms  301

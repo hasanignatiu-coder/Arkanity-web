@@ -1,0 +1,671 @@
+You are building a complete, production-ready Google Reviews management platform for the Bulgarian market. Create ALL missing files with these EXACT specifications. This website must beat Merchynt, BrightLocal, Synup, and all competitors.
+
+═══════════════════════════════════════════════════════════════════
+COMPETITOR ANALYSIS - WHAT THEY DO BETTER
+═══════════════════════════════════════════════════════════════════
+
+MERCHYNT STRENGTHS TO COPY:
+✅ Heatmap/geo-grid visual ranking tool
+✅ "4.9/5 based on 900+ reviews" social proof
+✅ Video testimonials prominently displayed
+✅ "20,000+ GBPs optimized" stat counter
+✅ Live webinar registration CTA
+✅ Before/After ranking screenshots
+✅ Free audit tool as lead magnet
+✅ Trust badges (featured on Yahoo, Martech, etc.)
+✅ Client success stories with metrics
+✅ Pricing hidden behind "Request Quote" (generates leads)
+
+WHAT WE'LL ADD TO BEAT THEM:
+🚀 Interactive demo widget (they don't have this)
+🚀 Bulgarian language priority (they only have English)
+🚀 Real-time social proof ticker
+🚀 Exit intent popup with free PDF
+🚀 Faster, cleaner UI
+🚀 Local Bulgarian business focus
+
+═══════════════════════════════════════════════════════════════════
+CREATE THESE FILES
+═══════════════════════════════════════════════════════════════════
+
+FILE 1: css/styles.css
+═══════════════════════════════════════════════════════════════════
+
+```css
+/* ARKANITY - Production CSS v2.0 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: #00d9ff;
+    --primary-dark: #00a8cc;
+    --dark: #1a1a1a;
+    --dark-elevated: #242424;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+/* === BACKGROUND EFFECTS === */
+.bg-gradient-mesh {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0,217,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0,168,204,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0,217,255,0.08) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+}
+
+.noise-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1; opacity: 0.4;
+}
+
+/* === FLOATING SHAPES === */
+.floating-shape {
+    position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.6;
+    pointer-events: none; z-index: 0; animation: float 20s infinite ease-in-out;
+}
+.shape-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,217,255,0.3) 0%, transparent 70%);
+    top: -250px; right: -250px;
+}
+.shape-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,168,204,0.2) 0%, transparent 70%);
+    bottom: -200px; left: -200px; animation-delay: -10s;
+}
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* === ANIMATIONS === */
+.fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.fade-in-up { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* === GLOW EFFECTS (MERCHYNT STYLE) === */
+.btn-glow { position: relative; overflow: hidden; }
+.btn-glow::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+.btn-glow:hover::before { left: 100%; }
+.text-glow { text-shadow: 0 0 20px rgba(0,217,255,0.5), 0 0 40px rgba(0,217,255,0.3); }
+
+/* === NAVBAR === */
+#navbar { transition: all 0.3s ease; }
+#navbar.scrolled {
+    background: rgba(26,26,26,0.8);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+/* === TICKER (MERCHYNT-STYLE SOCIAL PROOF) === */
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-ticker { display: flex; animation: ticker 30s linear infinite; }
+
+/* === INFINITE SCROLL === */
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+.animate-infinite-scroll { animation: infinite-scroll 20s linear infinite; }
+
+/* === GLASS EFFECT === */
+.glass-panel {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* === COOKIE BANNER === */
+.cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(26,26,26,0.95); backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem; z-index: 9999;
+    transform: translateY(100%); transition: transform 0.4s ease-out;
+}
+.cookie-banner.show { transform: translateY(0); }
+
+.cookie-content {
+    max-width: 1200px; margin: 0 auto; display: flex;
+    align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+}
+.cookie-text { flex: 1; min-width: 300px; }
+.cookie-title { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+.cookie-message { color: #9ca3af; font-size: 0.875rem; line-height: 1.5; }
+.cookie-buttons { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.cookie-learn { color: var(--primary); text-decoration: underline; font-size: 0.875rem; transition: opacity 0.2s; }
+.cookie-learn:hover { opacity: 0.8; }
+.cookie-reject, .cookie-accept {
+    padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 600;
+    font-size: 0.875rem; cursor: pointer; transition: all 0.2s; border: none;
+}
+.cookie-reject { background: transparent; color: #9ca3af; border: 1px solid #4b5563; }
+.cookie-reject:hover { border-color: #6b7280; color: white; }
+.cookie-accept { background: var(--primary); color: var(--dark); }
+.cookie-accept:hover { background: white; transform: translateY(-1px); }
+
+/* === STATS COUNTER (MERCHYNT STYLE) === */
+.stat-number {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === BEFORE/AFTER COMPARISON (MERCHYNT FEATURE) === */
+.before-after-container {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,217,255,0.2);
+}
+.before-after-label {
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+.before-label { left: 1rem; }
+.after-label { right: 1rem; }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .cookie-content { flex-direction: column; align-items: stretch; }
+    .cookie-buttons { flex-direction: column; width: 100%; }
+    .cookie-reject, .cookie-accept { width: 100%; }
+    .floating-shape { display: none; }
+    .stat-number { font-size: 2rem; }
+}
+
+/* === PRICING CARDS === */
+.pricing-card { transition: all 0.3s ease; }
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,217,255,0.2);
+}
+
+/* === UTILITIES === */
+.animate-spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* === TRUST BADGES (MERCHYNT STYLE) === */
+.trust-badge {
+    filter: grayscale(100%) opacity(0.5);
+    transition: all 0.3s;
+}
+.trust-badge:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* === PULSING DOT (LIVE INDICATOR) === */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+```
+
+═══════════════════════════════════════════════════════════════════
+
+FILE 2: js/main.js
+═══════════════════════════════════════════════════════════════════
+
+```javascript
+/**
+ * ARKANITY v2.0 - Competitor-Beating Features
+ * Combines best of Merchynt, BrightLocal, Synup
+ */
+'use strict';
+
+// ========== NAVBAR ==========
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.pageYOffset > 100);
+});
+
+// ========== MOBILE MENU ==========
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+});
+
+mobileMenuClose?.addEventListener('click', () => {
+    mobileMenu?.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+});
+
+mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+    });
+});
+
+// ========== BACK TO TOP ==========
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        const show = window.pageYOffset > 500;
+        backToTop.style.opacity = show ? '1' : '0';
+        backToTop.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+        backToTop.style.pointerEvents = show ? 'auto' : 'none';
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// ========== MOBILE STICKY CTA ==========
+const mobileStickyCta = document.getElementById('mobile-sticky-cta');
+if (mobileStickyCta) {
+    window.addEventListener('scroll', () => {
+        mobileStickyCta.classList.toggle('translate-y-full', window.pageYOffset < 800);
+    });
+}
+
+// ========== MODAL SYSTEM ==========
+const modal = document.getElementById('custom-modal');
+const modalContent = document.getElementById('modal-content');
+const modalTitle = document.getElementById('modal-title');
+const modalMessage = document.getElementById('modal-message');
+const modalIcon = document.getElementById('modal-icon');
+const modalClose = document.getElementById('modal-close');
+
+function showModal(title, message, success = true) {
+    if (!modal) return;
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    modalIcon.innerHTML = success ? '<i class="fa-solid fa-check"></i>' : '<i class="fa-solid fa-xmark"></i>';
+    modalIcon.className = `w-16 h-16 bg-${success ? 'primary' : 'red-500'}/10 rounded-full flex items-center justify-center text-${success ? 'primary' : 'red-500'} text-3xl mx-auto mb-4`;
+    modal.style.opacity = '1';
+    modal.style.pointerEvents = 'auto';
+    modalContent.style.transform = 'scale(1)';
+}
+
+function hideModal() {
+    if (!modal) return;
+    modal.style.opacity = '0';
+    modal.style.pointerEvents = 'none';
+    modalContent.style.transform = 'scale(0.95)';
+}
+
+modalClose?.addEventListener('click', hideModal);
+document.getElementById('modal-backdrop')?.addEventListener('click', hideModal);
+
+// ========== FORM SUBMISSION ==========
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const origText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i>Изпраща се...';
+        
+        const data = Object.fromEntries(new FormData(contactForm));
+        
+        try {
+            const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            if (res.ok) {
+                showModal('Успешно!', 'Ще се свържем с вас в рамките на 24 часа.', true);
+                contactForm.reset();
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', { event_category: 'engagement' });
+                }
+            } else {
+                throw new Error('Failed');
+            }
+        } catch (err) {
+            showModal('Грешка', 'Моля, опитайте отново или пишете на info@arkanity.agency', false);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = origText;
+        }
+    });
+}
+
+// ========== COOKIE CONSENT ==========
+const cookieBanner = document.getElementById('cookie-banner');
+
+function checkCookies() {
+    if (!localStorage.getItem('arkanity-cookie-consent') && cookieBanner) {
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+            setTimeout(() => cookieBanner.classList.add('show'), 100);
+        }, 2000);
+    }
+}
+
+window.acceptCookies = () => {
+    localStorage.setItem('arkanity-cookie-consent', 'accepted');
+    cookieBanner?.classList.remove('show');
+    setTimeout(() => { if (cookieBanner) cookieBanner.style.display = 'none'; }, 400);
+    if (typeof gtag !== 'undefined') gtag('consent', 'update', { analytics_storage: 'granted' });
+};
+
+window.rejectCookies = () => {
+    localStorage.setItem('arkanity-cookie-consent', 'rejected');
+    cookieBanner?.classList.remove('show');
+    setTimeout(() => { if (cookieBanner) cookieBanner.style.display = 'none'; }, 400);
+};
+
+// ========== EXIT INTENT (MERCHYNT STYLE) ==========
+let exitShown = false;
+document.addEventListener('mouseleave', (e) => {
+    if (e.clientY < 50 && !exitShown && window.innerWidth > 768) {
+        exitShown = true;
+        showModal('Чакайте! 🎁', 'Изтеглете безплатния одит преди да напуснете.', true);
+        if (modalClose) {
+            modalClose.textContent = 'Изтегли безплатния одит (PDF)';
+            modalClose.onclick = () => {
+                window.open('/arkanity_besplaten_audit_reputatsiya.pdf', '_blank');
+                if (typeof gtag !== 'undefined') gtag('event', 'file_download', { file_name: 'audit.pdf' });
+                hideModal();
+            };
+        }
+    }
+});
+
+// ========== DEMO WIDGET ==========
+const demoStars = document.getElementById('demo-stars');
+if (demoStars) {
+    demoStars.querySelectorAll('i').forEach((star, i) => {
+        star.addEventListener('click', () => {
+            const rating = i + 1;
+            demoStars.querySelectorAll('i').forEach((s, j) => {
+                s.classList.toggle('text-yellow-400', j <= i);
+                s.classList.toggle('text-gray-300', j > i);
+            });
+            
+            setTimeout(() => {
+                const s1 = document.getElementById('phone-screen-1');
+                const s2 = document.getElementById('phone-screen-feedback');
+                const panel = document.getElementById('demo-result-panel');
+                
+                if (s1) s1.classList.add('translate-x-[-100%]');
+                if (s2) s2.classList.remove('translate-x-full');
+                
+                if (rating >= 4) {
+                    if (s2) s2.innerHTML = `
+                        <div class="w-16 h-16 bg-green-500/20 rounded-full mb-6 flex items-center justify-center text-4xl">✅</div>
+                        <h3 class="text-dark font-bold text-xl mb-2">Благодарим ви!</h3>
+                        <p class="text-gray-500 text-sm mb-6">Насочваме ви към Google Reviews.</p>
+                        <div class="w-full h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+                            <i class="fa-brands fa-google mr-2"></i> Към Google
+                        </div>
+                    `;
+                    if (panel) {
+                        panel.style.opacity = '1';
+                        panel.style.transform = 'translateY(0)';
+                    }
+                    const icon = document.getElementById('result-icon');
+                    const title = document.getElementById('result-title');
+                    const desc = document.getElementById('result-desc');
+                    if (icon) icon.textContent = '🎯';
+                    if (title) title.textContent = 'Публичен отзив в Google';
+                    if (desc) desc.textContent = 'Щастливите клиенти се насочват към Google за максимално въздействие.';
+                } else {
+                    if (s2) s2.innerHTML = `
+                        <div class="w-16 h-16 bg-orange-500/20 rounded-full mb-6 flex items-center justify-center text-4xl">📝</div>
+                        <h3 class="text-dark font-bold text-xl mb-2">Съжаляваме</h3>
+                        <p class="text-gray-500 text-sm mb-6">Споделете какво не ви хареса.</p>
+                        <textarea class="w-full h-24 p-3 border rounded-lg text-sm" placeholder="Вашите коментари..."></textarea>
+                        <button class="mt-4 w-full bg-gray-800 text-white py-3 rounded-lg font-bold">Изпрати</button>
+                    `;
+                    if (panel) {
+                        panel.style.opacity = '1';
+                        panel.style.transform = 'translateY(0)';
+                    }
+                    const icon = document.getElementById('result-icon');
+                    const title = document.getElementById('result-title');
+                    const desc = document.getElementById('result-desc');
+                    if (icon) icon.textContent = '🛡️';
+                    if (title) title.textContent = 'Частна обратна връзка';
+                    if (desc) desc.textContent = 'Недоволните клиенти пишат директно до вас - без публичен вред.';
+                }
+            }, 300);
+        });
+    });
+}
+
+// ========== HERO CAROUSEL ==========
+const heroSlides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+if (heroSlides.length > 0) {
+    setInterval(() => {
+        heroSlides[currentSlide].style.opacity = '0';
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+        heroSlides[currentSlide].style.opacity = '1';
+    }, 5000);
+}
+
+// ========== SCROLL REVEAL ==========
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('fade-in-up');
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+// ========== FAQ ACCORDION ==========
+document.querySelectorAll('.faq-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const ans = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const open = ans.style.maxHeight;
+        
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+        document.querySelectorAll('.faq-button i').forEach(i => {
+            i.classList.remove('fa-minus');
+            i.classList.add('fa-plus');
+        });
+        
+        if (!open) {
+            ans.style.maxHeight = ans.scrollHeight + 'px';
+            if (icon) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            }
+        }
+    });
+});
+
+// ========== STATS COUNTER (MERCHYNT STYLE) ==========
+function animateCounter(el, target, duration = 2000) {
+    let current = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+        } else {
+            el.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.querySelectorAll('.stat-number').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateCounter(counter, target);
+            });
+            statsObserver.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('#stats');
+if (statsSection) statsObserver.observe(statsSection);
+
+// ========== INIT ==========
+document.addEventListener('DOMContentLoaded', () => {
+    checkCookies();
+    console.log('🚀 Arkanity v2.0 loaded - Built to beat Merchynt');
+});
+```
+
+═══════════════════════════════════════════════════════════════════
+
+FILE 3: js/translations.js
+═══════════════════════════════════════════════════════════════════
+
+```javascript
+const translations = {
+    bg: {
+        'nav.about': 'За нас', 'nav.services': 'Услуги', 'nav.plans': 'Планове',
+        'nav.contact': 'Контакти', 'nav.cta': 'Безплатна консултация',
+        'hero.badge': 'Ново поколение репутационен мениджмънт',
+        'hero.title.prefix': 'Увеличете вашите Google отзиви с',
+        'hero.subtitle': 'Без усилия от ваша страна. Напълно автоматизирано.',
+        'hero.cta.primary': 'Запазете консултация',
+        'hero.cta.secondary': 'Виж как работи',
+        'hero.trust': 'Доказани резултати за <span class="text-white font-bold">50+</span> български бизнеса',
+        'footer.copyright': '© 2024 Arkanity. Всички права запазени.',
+        'footer.privacy': 'Поверителност', 'footer.terms': 'Условия', 'footer.cookies': 'Бисквитки',
+        'cookie.title': '🍪 Използваме бисквитки',
+        'cookie.message': 'Използваме бисквитки за подобряване на вашето преживяване.',
+        'cookie.learn': 'Научете повече', 'cookie.reject': 'Откажи',
+        'cookie.accept': 'Приемам всички бисквитки'
+    },
+    en: {
+        'nav.about': 'About', 'nav.services': 'Services', 'nav.plans': 'Pricing',
+        'nav.contact': 'Contact', 'nav.cta': 'Free Consultation',
+        'hero.badge': 'Next-Gen Reputation Management',
+        'hero.title.prefix': 'Increase Your Google Reviews by',
+        'hero.subtitle': 'Completely automated. Zero effort required.',
+        'hero.cta.primary': 'Book Consultation',
+        'hero.cta.secondary': 'See How It Works',
+        'hero.trust': 'Proven results for <span class="text-white font-bold">50+</span> Bulgarian businesses',
+        'footer.copyright': '© 2024 Arkanity. All rights reserved.',
+        'footer.privacy': 'Privacy', 'footer.terms': 'Terms', 'footer.cookies': 'Cookies',
+        'cookie.title': '🍪 We use cookies',
+        'cookie.message': 'We use cookies to improve your experience.',
+        'cookie.learn': 'Learn more', 'cookie.reject': 'Reject',
+        'cookie.accept': 'Accept all cookies'
+    }
+};
+
+let currentLang = localStorage.getItem('arkanity-lang') || 'bg';
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('arkanity-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang]?.[key]) el.innerHTML = translations[lang][key];
+    });
+    const toggle = document.getElementById('lang-toggle');
+    if (toggle) toggle.innerHTML = lang === 'bg' ? '<span>🇧🇬</span> BG' : '<span>🇬🇧</span> EN';
+    document.documentElement.lang = lang;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(currentLang);
+    ['lang-toggle', 'lang-toggle-mobile'].forEach(id => {
+        document.getElementById(id)?.addEventListener('click', () => {
+            setLanguage(currentLang === 'bg' ? 'en' : 'bg');
+        });
+    });
+});
+```
+
+═══════════════════════════════════════════════════════════════════
+
+FILE 4: src/input.css
+═══════════════════════════════════════════════════════════════════
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+═══════════════════════════════════════════════════════════════════
+
+DEPLOYMENT INSTRUCTIONS
+═══════════════════════════════════════════════════════════════════
+
+1. Place all files in project root
+2. Run: npm install
+3. Run: npm run build:css
+4. Update form endpoint in js/main.js (line ~79)
+5. Test locally
+6. Deploy to Netlify
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEMA MARKUP FIX (in index.html)
+═══════════════════════════════════════════════════════════════════
+
+Line 1446 - Replace:
+"telephone": "+359 88 XXX XXXX"  (use your real phone)
+
+Lines 1457-1461 - REMOVE this entire section:
+"aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "reviewCount": "84"
+}
+
+Keep visual ratings on website. Only remove from JSON-LD schema.
+
+═══════════════════════════════════════════════════════════════════
+
+WHAT THIS BEATS COMPETITORS WITH
+═══════════════════════════════════════════════════════════════════
+
+✅ Interactive demo widget (Merchynt doesn't have)
+✅ Real-time social proof ticker
+✅ Exit intent popup with free audit
+✅ Bulgarian language first (global competitors only English)
+✅ Faster load times (production CSS/JS)
+✅ Mobile-optimized UI
+✅ Stats counter animation (Merchynt style)
+✅ Clean, modern design
+✅ Video testimonial ready
+✅ Before/after screenshots ready
+
+═══════════════════════════════════════════════════════════════════

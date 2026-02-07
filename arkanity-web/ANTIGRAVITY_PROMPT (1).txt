@@ -1,0 +1,175 @@
+# PROMPT FOR ANTIGRAVITY - NETLIFY FORMS FIX
+
+Copy and paste this entire message to Antigravity:
+
+---
+
+**TASK: Fix Netlify Forms - They're currently broken and showing error modal**
+
+**THE PROBLEM:**
+The forms on arkanity.agency are failing with error: "There was a problem sending. Please try again or email us at info@arkanity.agency"
+
+Root cause: The `js/main.js` file is intercepting form submissions via JavaScript, which conflicts with Netlify Forms' native HTML submission.
+
+**THE FIX NEEDED:**
+
+Please make these 3 changes to the website:
+
+## 1. DISABLE THE MAIN.JS SCRIPT
+
+In `index.html`, find this line (near the end, around line 1632):
+```html
+<script src="js/main.js?v=3.0" defer></script>
+```
+
+Replace it with:
+```html
+<!-- <script src="js/main.js?v=3.0" defer></script> -->
+<!-- DISABLED: Conflicts with Netlify Forms native submission -->
+```
+
+## 2. ADD SUCCESS REDIRECTS TO BOTH FORMS
+
+**Form 1 - Lead Magnet Form (around line 961):**
+
+Find:
+```html
+<form class="space-y-4" id="lead-magnet-form" data-netlify="true" name="lead_magnet" method="POST">
+```
+
+Replace with:
+```html
+<form class="space-y-4" id="lead-magnet-form" data-netlify="true" name="lead_magnet" method="POST" action="/success.html">
+```
+
+**Form 2 - Consultation Form (around line 1290):**
+
+Find:
+```html
+<form class="space-y-6" id="contact-form" data-netlify="true" name="consultation" method="POST">
+```
+
+Replace with:
+```html
+<form class="space-y-6" id="contact-form" data-netlify="true" name="consultation" method="POST" action="/success.html">
+```
+
+## 3. CREATE A NEW FILE: success.html
+
+Create a new file called `success.html` in the root directory with this content:
+
+```html
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Благодарим ви! | Arkanity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+
+        @keyframes checkmark {
+            0% {
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+
+        .checkmark-animate {
+            animation: checkmark 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="text-center space-y-8 max-w-2xl">
+        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center checkmark-animate">
+            <i class="fa-solid fa-check text-white text-5xl"></i>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-primary text-glow">Благодарим ви!</h1>
+
+        <p class="text-xl text-gray-300">
+            Вашето запитване беше успешно изпратено.
+        </p>
+
+        <p class="text-gray-400 max-w-md mx-auto">
+            Нашият екип ще прегледа информацията и ще се свърже с вас в рамките на 24 часа.
+            Проверете имейла си (включително спам папката) за потвърждение.
+        </p>
+
+        <div class="pt-8 space-y-4">
+            <a href="/"
+                class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-dark bg-primary hover:bg-white transition-all shadow-[0_0_25px_rgba(0,217,255,0.4)]">
+                Към началната страница
+                <i class="fa-solid fa-home ml-2"></i>
+            </a>
+
+            <p class="text-sm text-gray-500">
+                Или ни се обадете директно: <a href="tel:+359886401643" class="text-primary hover:underline">+359 88 640 1643</a>
+            </p>
+        </div>
+
+        <div class="pt-12 border-t border-white/10">
+            <p class="text-sm text-gray-400 mb-4">Докато чакате, може да ни последвате:</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.facebook.com/profile.php?id=61587285212061" target="_blank"
+                    class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/arkanity.agency/" target="_blank"
+                    class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/arkanity/" target="_blank"
+                    class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+```
+
+---
+
+**SUMMARY OF CHANGES:**
+1. ✅ Commented out `js/main.js` script (it was blocking Netlify Forms)
+2. ✅ Added `action="/success.html"` to both forms
+3. ✅ Created new success page with animated checkmark
+
+**WHY THIS FIXES IT:**
+- Netlify Forms work with native HTML form submissions
+- JavaScript was intercepting and trying to submit via AJAX
+- Now forms submit directly to Netlify → user sees success page → we get the data
+
+**TESTING:**
+After you make these changes:
+1. Deploy the site
+2. Go to arkanity.agency
+3. Fill out the lead magnet form
+4. Submit it
+5. You should be redirected to the success page (with green checkmark)
+6. Check Netlify Dashboard → Forms → You'll see the submission!
+
+---
+
+Please implement these 3 changes and let me know when it's done so I can test the forms!

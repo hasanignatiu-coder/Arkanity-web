@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страницата не е намерена | Arkanity</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00d9ff',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #050505;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 217, 255, 0.03) 0%, transparent 25%);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="text-center space-y-8 fade-in">
+        <h1 class="text-9xl font-bold text-primary text-glow">404</h1>
+        <h2 class="text-3xl font-display font-bold">Опа! Страницата изчезна.</h2>
+        <p class="text-gray-400 max-w-md mx-auto">
+            Изглежда, че страницата, която търсите, не съществува или е била преместена.
+            Не се притеснявайте, репутацията ви все още е в безопасност!
+        </p>
+        <div class="pt-4">
+            <a href="/"
+                class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-dark bg-primary hover:bg-white transition-all shadow-[0_0_25px_rgba(0,217,255,0.4)]">
+                Към началната страница
+                <i class="fa-solid fa-home ml-2"></i>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
